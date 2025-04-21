@@ -1,0 +1,26 @@
+C:\Users\dilshanv\source\repos\StudentManagement.Domain\StudentManagement.Domain\bin\Debug\net9.0\StudentManagement.Domain.deps.json
+C:\Users\dilshanv\source\repos\StudentManagement.Domain\StudentManagement.Domain\bin\Debug\net9.0\StudentManagement.Domain.dll
+C:\Users\dilshanv\source\repos\StudentManagement.Domain\StudentManagement.Domain\bin\Debug\net9.0\StudentManagement.Domain.pdb
+C:\Users\dilshanv\source\repos\StudentManagement.Domain\StudentManagement.Domain\obj\Debug\net9.0\StudentManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dilshanv\source\repos\StudentManagement.Domain\StudentManagement.Domain\obj\Debug\net9.0\StudentManagement.Domain.AssemblyInfoInputs.cache
+C:\Users\dilshanv\source\repos\StudentManagement.Domain\StudentManagement.Domain\obj\Debug\net9.0\StudentManagement.Domain.AssemblyInfo.cs
+C:\Users\dilshanv\source\repos\StudentManagement.Domain\StudentManagement.Domain\obj\Debug\net9.0\StudentManagement.Domain.csproj.CoreCompileInputs.cache
+C:\Users\dilshanv\source\repos\StudentManagement.Domain\StudentManagement.Domain\obj\Debug\net9.0\StudentManagement.Domain.dll
+C:\Users\dilshanv\source\repos\StudentManagement.Domain\StudentManagement.Domain\obj\Debug\net9.0\refint\StudentManagement.Domain.dll
+C:\Users\dilshanv\source\repos\StudentManagement.Domain\StudentManagement.Domain\obj\Debug\net9.0\StudentManagement.Domain.pdb
+C:\Users\dilshanv\source\repos\StudentManagement.Domain\StudentManagement.Domain\obj\Debug\net9.0\ref\StudentManagement.Domain.dll
+C:\Users\dilshanv\OneDrive - BoardPAC\Desktop\CsharpProjects\StudentManagementSystem\StudentManagement.Domain\bin\Debug\net9.0\StudentManagement.Domain.deps.json
+C:\Users\dilshanv\OneDrive - BoardPAC\Desktop\CsharpProjects\StudentManagementSystem\StudentManagement.Domain\bin\Debug\net9.0\StudentManagement.Domain.dll
+C:\Users\dilshanv\OneDrive - BoardPAC\Desktop\CsharpProjects\StudentManagementSystem\StudentManagement.Domain\bin\Debug\net9.0\StudentManagement.Domain.pdb
+C:\Users\dilshanv\OneDrive - BoardPAC\Desktop\CsharpProjects\StudentManagementSystem\StudentManagement.Domain\obj\Debug\net9.0\StudentManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dilshanv\OneDrive - BoardPAC\Desktop\CsharpProjects\StudentManagementSystem\StudentManagement.Domain\obj\Debug\net9.0\StudentManagement.Domain.AssemblyInfoInputs.cache
+C:\Users\dilshanv\OneDrive - BoardPAC\Desktop\CsharpProjects\StudentManagementSystem\StudentManagement.Domain\obj\Debug\net9.0\StudentManagement.Domain.AssemblyInfo.cs
+C:\Users\dilshanv\OneDrive - BoardPAC\Desktop\CsharpProjects\StudentManagementSystem\StudentManagement.Domain\obj\Debug\net9.0\StudentManagement.Domain.csproj.CoreCompileInputs.cache
+C:\Users\dilshanv\OneDrive - BoardPAC\Desktop\CsharpProjects\StudentManagementSystem\StudentManagement.Domain\obj\Debug\net9.0\StudentManagement.Domain.dll
+C:\Users\dilshanv\OneDrive - BoardPAC\Desktop\CsharpProjects\StudentManagementSystem\StudentManagement.Domain\obj\Debug\net9.0\refint\StudentManagement.Domain.dll
+C:\Users\dilshanv\OneDrive - BoardPAC\Desktop\CsharpProjects\StudentManagementSystem\StudentManagement.Domain\obj\Debug\net9.0\StudentManagement.Domain.pdb
+C:\Users\dilshanv\OneDrive - BoardPAC\Desktop\CsharpProjects\StudentManagementSystem\StudentManagement.Domain\obj\Debug\net9.0\ref\StudentManagement.Domain.dll
+C:\Users\dilshanv\OneDrive - BoardPAC\Desktop\CsharpProjects\StudentManagementSystem\StudentManagement.Domain\obj\Debug\net9.0\StudentManagement.Domain.sourcelink.json
+C:\Users\dilshanv\OneDrive - BoardPAC\Desktop\CsharpProjects\StudentManagementSystem\StudentManagement.Domain\bin\Debug\net9.0\StudentManagement.Domain.runtimeconfig.json
+C:\Users\dilshanv\OneDrive - BoardPAC\Desktop\CsharpProjects\StudentManagementSystem\StudentManagement.Domain\obj\Debug\net9.0\StudentManagement.Domain.csproj.AssemblyReference.cache
+C:\Users\dilshanv\OneDrive - BoardPAC\Desktop\CsharpProjects\StudentManagementSystem\StudentManagement.Domain\obj\Debug\net9.0\StudentManagement.Domain.genruntimeconfig.cache
