@@ -11,7 +11,7 @@ namespace StudentManagement.Repository
     {
         void AddStudentSubject(StudentSubject studentSubject);
 
-
+        void DeleteStudentSubject(StudentSubject studentSubject);
 
     }
 }

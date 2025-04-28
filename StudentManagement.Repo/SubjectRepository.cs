@@ -11,7 +11,7 @@ namespace StudentManagement.Repository
     public class SubjectRepository : ISubjectRepository
     {
 
-        private readonly EfContext context;
+        public readonly EfContext context;
 
         public SubjectRepository(EfContext context)
         {
@@ -27,6 +27,19 @@ namespace StudentManagement.Repository
         public void Dispose()
         {
             Console.WriteLine("Disposing the Subject Repository...");
+        }
+
+        public void DeleteSubject(Subject subject)
+        {
+            var trackedEntity = context.Students.Local.FirstOrDefault(s => s.Id == subject.Id);
+            if (trackedEntity == null)
+            {
+                context.Subjects.Attach(subject);
+            }
+            var subjectToRemove = context.Subjects.FirstOrDefault(s => s.Id == subject.Id);
+            context.Subjects.Remove(subjectToRemove);
+            Console.WriteLine(subjectToRemove.SubjectName + "   sdfsdfdddddddddddddddddddddd");
+            context.SaveChanges();
         }
     }
 }

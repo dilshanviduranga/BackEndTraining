@@ -22,11 +22,6 @@ namespace StudentManagement.Application
             set => studentList = value;
         }
 
-        //public StudentService(StudentRepository studentRepository)
-        //{
-        //    this.studentRepository = studentRepository;
-        //}
-
         public StudentService(UnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
@@ -35,11 +30,10 @@ namespace StudentManagement.Application
 
         public void AddStudent(String name, int age, DateTime dob, String address)
         {
-            Student student = new Student(StudentList.Count + 1, name, age, dob, address);
+            Student student = new Student(name, age, dob, address);
             StudentList.Add(student);
-            Console.WriteLine($"{student.Name} Student Successfully Added...\n");
-            //studentRepository.AddStudent(student);
             unitOfWork.studentRepository.AddStudent(student);
+            Console.WriteLine($"{student.Name} Student Successfully Added...\n");
         }
 
         public void ViewStudents()
@@ -52,7 +46,7 @@ namespace StudentManagement.Application
             Console.WriteLine("Student Name");
             for (int i = 0; i < StudentList.Count; i++)
             {
-                Console.WriteLine($"[{i + 1}] {StudentList[i].Name}");
+                Console.WriteLine($"[{StudentList[i].Id}] {StudentList[i].Name}");
             }
             Console.WriteLine();
         }
@@ -74,11 +68,27 @@ namespace StudentManagement.Application
                 }
                 break;
             }
-            if (finder > 0 & finder <= StudentList.Count)
+            //if (finder > 0 & finder <= StudentList.Count)
+            //{
+            //    return finder;
+            //}
+
+            foreach (var item in studentList)
             {
-                return finder;
+                if(finder == item.Id)
+                {
+                    return finder;
+                }
             }
             return -1;
+        }
+
+
+        public void DeleteStudent(Student student)
+        {
+            studentList.Remove(student);
+            unitOfWork.studentRepository.RemoveStudent(student);
+            Console.WriteLine("Student successfully removed...\n");
         }
     }
 }

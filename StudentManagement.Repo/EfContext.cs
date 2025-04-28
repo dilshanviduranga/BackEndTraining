@@ -12,6 +12,8 @@ namespace StudentManagement.Repo
     {
         public EfContext() : base() { }
 
+        public EfContext(DbContextOptions<EfContext> options) : base(options) { }
+
         public DbSet<Student> Students { get; set; }
         public DbSet<Subject> Subjects { get; set; }
 
@@ -23,16 +25,30 @@ namespace StudentManagement.Repo
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
-{
-        modelBuilder.Entity<Student>(entity =>
         {
-            entity.HasKey(e => e.Id); // Ensure the primary key is set
-            entity.Property(e => e.Name).IsRequired();
-            entity.Property(e => e.Age).IsRequired();
-            entity.Property(e => e.Address).IsRequired();
+            modelBuilder.Entity<StudentSubject>()
+            .HasOne(ss => ss.Student)
+            .WithMany(s => s.StudentSubjects)
+            .HasForeignKey(ss => ss.studentId)
+            .OnDelete(DeleteBehavior.Cascade); // 👈 Enables cascade delete for Student
 
+            modelBuilder.Entity<StudentSubject>()
+                .HasOne(ss => ss.Subject)
+                .WithMany(s => s.StudentSubjects)
+                .HasForeignKey(ss => ss.subjectId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Student>(entity =>
+            {
+                entity.HasKey(e => e.Id); // Ensure the primary key is set
+                entity.Property(e => e.Name).IsRequired();
+                entity.Property(e => e.Age).IsRequired();
+                entity.Property(e => e.Address).IsRequired();
         
-        });
-}
+            });
+
+            modelBuilder.Entity<Subject>()
+           .HasKey(s => s.Id);
+        }
     }
 }

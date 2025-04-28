@@ -21,6 +21,19 @@ namespace StudentManagement.Repository
             context.SaveChanges();
         }
 
+        public void DeleteStudentSubject(StudentSubject studentSubject)
+        {
+            var trackedEntity = context.Students.Local.FirstOrDefault(s => s.Id == studentSubject.Id);
+            if (trackedEntity == null)
+            {
+                context.StudentSubjects.Attach(studentSubject);
+            }
+            var studentSubjectToRemove = context.Subjects.FirstOrDefault(s => s.Id == studentSubject.Id);
+            context.Subjects.Remove(studentSubjectToRemove);
+            Console.WriteLine(studentSubjectToRemove.SubjectName + " Deleted.......");
+            context.SaveChanges();
+        }
+
         public void Dispose()
         {
             Console.WriteLine("sfdfsdfsdf");

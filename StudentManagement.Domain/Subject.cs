@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,31 +9,33 @@ using Microsoft.EntityFrameworkCore;
 
 namespace StudentManagement.Domain
 {
-    [PrimaryKey("subjectId")]
+    [PrimaryKey("Id")]
     public class Subject
     {
         [Key]
-        private int subjectId;
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id
+        {
+            get;
+            set;
+        }
 
         [Required]
         [MaxLength(100)]
         private String subjectName;
 
-
-        public Subject() { }
-        public Subject(int id, String subjectName)
+        public Subject(String subjectName)
         {
-            this.subjectId = id;
             this.subjectName = subjectName;
         }
 
-        public int SubjectID
-        {
-            get
-            {
-                return subjectId;
-            }
-        }
+        //public int SubjectID
+        //{
+        //    get
+        //    {
+        //        return Id;
+        //    }
+        //}
 
         public String SubjectName
         {
@@ -46,6 +49,9 @@ namespace StudentManagement.Domain
             }
         }
 
+        public ICollection<StudentSubject> StudentSubjects { get; set; } = new List<StudentSubject>();
+
+        private Subject() { }
 
 
     }

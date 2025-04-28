@@ -34,7 +34,9 @@ using (EfContext context = new EfContext()) {
 
         while (true)
         {
-
+            studentService.studentList = context.Students.ToList();
+            subjectService.SubjectList = context.Subjects.ToList();
+            assignService.StudentSubjectList = context.StudentSubjects.ToList();
             Console.WriteLine("\n--- Menu ---");
             Console.WriteLine("1. Add Student");
             Console.WriteLine("2. Add Subject");
@@ -42,37 +44,24 @@ using (EfContext context = new EfContext()) {
             Console.WriteLine("4. View Students List");
             Console.WriteLine("5. View Subject List");
             Console.WriteLine("6. View Subject Assigned List");
+            Console.WriteLine("8. Delete a student");
+            Console.WriteLine("9. Delete a subject");
+            Console.WriteLine("10. Unassign student from subject");
             Console.WriteLine("7. Exit\n");
             Console.Write("Enter your option: ");
             int userInput = 0;
             userInput = ValidateIntegerInputs();
-            // try
-            // {
-            //     userInput = Convert.ToInt32(Console.ReadLine());
-            // }
-            // catch
-            // {
-            //     Console.WriteLine("Enter a valid number...");
-            //     continue;
-            // }
-
-            // if(userInput<0 | userInput>3){
-            //     Console.WriteLine("Invalid input...");
-            // }
 
             switch (userInput)
             {
                 case 1:
                     AddStudent();
-                    context.SaveChanges();
                     break;
                 case 2:
                     AddSubject();
-                    context.SaveChanges();
                     break;
                 case 3:
                     AssignSubjectToStudent();
-                    context.SaveChanges();
                     break;
                 case 4:
                     studentService.ViewStudents();
@@ -86,6 +75,15 @@ using (EfContext context = new EfContext()) {
                 case 7:
                     Console.WriteLine("Exit...");
                     return;
+                case 8:
+                    DeleteStudent();
+                    break;
+                case 9:
+                    DeleteSubject();
+                    break;
+                case 10:
+                    UnassignStudentSubject();
+                    break;
                 default:
                     Console.WriteLine("Try again...");
                     continue;
@@ -208,12 +206,55 @@ using (EfContext context = new EfContext()) {
 
         }
 
+        void DeleteStudent()
+        {
+            studentService.ViewStudents();
+            Console.Write("Enter the Id of the student you want to delete: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+            foreach (var item in studentService.studentList)
+            {
+                if(id == item.Id)
+                {
+                    studentService.DeleteStudent(item);
+                    return;
+                }
+            }
+            Console.WriteLine("Not found...\n");
+            
+        }
+
+
+
         void AddSubject()
         {
             Console.Write("Enter the new subject name:");
             String sName = Console.ReadLine();
             subjectService.AddSubject(sName);
             
+        }
+
+        void DeleteSubject()
+        {
+            subjectService.ViewSubjects();
+            Console.Write("Enter the Id of the subject you want to delete: ");
+            int id = Convert.ToInt32(Console.ReadLine());
+            foreach (var item in subjectService.SubjectList)
+            {
+                if (id == item.Id)
+                {
+                    subjectService.DeleteSubject(item);
+                    return;
+                }
+            }
+            Console.WriteLine("Not found...\n");
+
+        }
+
+        void UnassignStudentSubject()
+        {
+            assignService.ViewAssignedList(studentService , subjectService);
+            Console.Write("Enter the id of the student and subject you want to remove : ");
+            int id = Convert.ToInt32(Console.ReadLine());
         }
 
         bool BirthdayValidation(string birthday)
@@ -245,3 +286,4 @@ using (EfContext context = new EfContext()) {
         }
     }
 }
+

@@ -20,6 +20,13 @@ namespace StudentManagement.Repository
             context.StudentSubjects.Add(studentSubject);
             context.SaveChanges();
         }
+
+        public void DeleteStudentSubject(StudentSubject studentSubject)
+        {
+            context.StudentSubjects.Remove(studentSubject);
+            context.SaveChanges();
+        }
+
         public void Dispose()
         {
             Console.WriteLine("Disposing the Subject-Student Repository...");

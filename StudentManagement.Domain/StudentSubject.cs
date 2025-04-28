@@ -17,7 +17,11 @@ namespace StudentManagement.Domain
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id;
+        public int Id
+        {
+            get;
+            set;
+        }
 
         [ForeignKey("Student")]
         public int studentId { get; set; }
@@ -30,29 +34,12 @@ namespace StudentManagement.Domain
             this.subjectId = subjectId;
         }
 
-        //public Student Student
-        //{
-        //    get
-        //    {
-        //        return student;
-        //    }
-        //    set
-        //    {
-        //        student = value;
-        //    }
-        //}
+        public Student Student { get; set; }
+        public Subject Subject { get; set; }
 
+        private StudentSubject()
+        {
 
-        //public Subject Subject
-        //{
-        //    get
-        //    {
-        //        return subject;
-        //    }
-        //    set
-        //    {
-        //        subject = value;
-        //    }
-        //}
+        }
     }
 }

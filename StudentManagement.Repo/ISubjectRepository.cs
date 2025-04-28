@@ -10,5 +10,7 @@ namespace StudentManagement.Repository
     public interface ISubjectRepository : IDisposable
     {
         void AddSubject(Subject subject);
+
+        void DeleteSubject(Subject subject);
     }
 }

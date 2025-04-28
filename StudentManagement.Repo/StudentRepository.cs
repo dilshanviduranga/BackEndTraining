@@ -10,7 +10,7 @@ namespace StudentManagement.Repository
 {
     public class StudentRepository : IStudentRepository
     {
-        private readonly EfContext context;
+        public readonly EfContext context;
 
         public StudentRepository(EfContext context)
         {
@@ -26,6 +26,19 @@ namespace StudentManagement.Repository
         public void Dispose()
         {
             Console.WriteLine("Disposing the Student Repository...");
+        }
+
+        public void RemoveStudent(Student student)
+        {
+            var trackedEntity = context.Students.Local.FirstOrDefault(s => s.Id == student.Id);
+            if (trackedEntity == null)
+            {
+                context.Students.Attach(student);
+            }
+            var studentToRemove = context.Students.FirstOrDefault(s => s.Id == student.Id);
+            context.Students.Remove(studentToRemove);
+            Console.WriteLine(studentToRemove.Name+"   sdfsdfdddddddddddddddddddddd");
+            context.SaveChanges();
         }
     }
 }
