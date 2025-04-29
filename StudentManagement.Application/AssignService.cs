@@ -54,22 +54,9 @@ namespace StudentManagement.Application
                 return;
             }
             Console.WriteLine("\nStudent\t\t|\tSubject\n");
-            //foreach (var studentSubject in StudentSubjectList)
-            //{
-            //    Console.WriteLine($"{studentService.StudentList[studentSubject.studentId - 1].Name}\t\t|\t{subjectService.SubjectList[studentSubject.subjectId-1].SubjectName}");
-            //}
 
             foreach (var studentSubject in StudentSubjectList)
             {
-                //if (studentSubject.studentId - 1 < 0 || studentSubject.studentId - 1 >= studentService.StudentList.Count ||
-                //    studentSubject.subjectId - 1 < 0 || studentSubject.subjectId - 1 >= subjectService.SubjectList.Count)
-                //{
-                //    Console.WriteLine("Invalid student or subject ID detected.");
-                //    continue;
-                //}
-                //Console.WriteLine($"{studentService.StudentList[studentSubject.studentId].Name}\t\t|\t{subjectService.SubjectList[studentSubject.subjectId].SubjectName}");
-                //Console.WriteLine(studentSubject.studentId);
-                //Console.WriteLine(studentSubject.subjectId);
                 Student student = unitOfWork.studentRepository.context.Students.FirstOrDefault(s => s.Id == studentSubject.studentId);
                 Subject subject = unitOfWork.subjectRepository.context.Subjects.FirstOrDefault(s => s.Id == studentSubject.Id);
                 Console.WriteLine($"{student.Name}\t\t|\t{subject.SubjectName}");

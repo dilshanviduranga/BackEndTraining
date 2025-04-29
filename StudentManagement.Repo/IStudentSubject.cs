@@ -9,6 +9,5 @@ namespace StudentManagement.Repository
     public interface IStudentSubject : IDisposable
     {
         void AddStudentSubject(int studentId, int subjectId);
-        //void ViewStudentSubjects();
     }
 }

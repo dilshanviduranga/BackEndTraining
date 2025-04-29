@@ -7,7 +7,6 @@ namespace StudentManagement.Web.Dto
         public String studentName;
         public int age;
         public String address;
-        //public DateTime dob;
 
         [JsonConstructor]
         public StudentDto(string studentName, int age, string address)
@@ -15,7 +14,6 @@ namespace StudentManagement.Web.Dto
             this.studentName = studentName;
             this.age = age;
             this.address = address;
-            //this.dob = dob;
         }
     }
 }

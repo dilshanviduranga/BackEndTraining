@@ -29,14 +29,6 @@ namespace StudentManagement.Domain
             this.subjectName = subjectName;
         }
 
-        //public int SubjectID
-        //{
-        //    get
-        //    {
-        //        return Id;
-        //    }
-        //}
-
         public String SubjectName
         {
             get

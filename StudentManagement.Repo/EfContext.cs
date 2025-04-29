@@ -30,7 +30,7 @@ namespace StudentManagement.Repo
             .HasOne(ss => ss.Student)
             .WithMany(s => s.StudentSubjects)
             .HasForeignKey(ss => ss.studentId)
-            .OnDelete(DeleteBehavior.Cascade); // 👈 Enables cascade delete for Student
+            .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<StudentSubject>()
                 .HasOne(ss => ss.Subject)
@@ -40,7 +40,7 @@ namespace StudentManagement.Repo
 
             modelBuilder.Entity<Student>(entity =>
             {
-                entity.HasKey(e => e.Id); // Ensure the primary key is set
+                entity.HasKey(e => e.Id);
                 entity.Property(e => e.Name).IsRequired();
                 entity.Property(e => e.Age).IsRequired();
                 entity.Property(e => e.Address).IsRequired();

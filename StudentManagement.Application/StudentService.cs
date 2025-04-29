@@ -68,11 +68,7 @@ namespace StudentManagement.Application
                 }
                 break;
             }
-            //if (finder > 0 & finder <= StudentList.Count)
-            //{
-            //    return finder;
-            //}
-
+ 
             foreach (var item in studentList)
             {
                 if(finder == item.Id)

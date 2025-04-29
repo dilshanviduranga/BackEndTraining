@@ -139,16 +139,8 @@ using (EfContext context = new EfContext()) {
                 Console.WriteLine("Not found...");
                 return;
             }
-            //StudentSubject studentSubject = new StudentSubject(studentIndex, subjectIndex);
             assignService.AssignStudentToSubject(studentIndex , subjectIndex);
             
-            
-            //if (studentSubject == null)
-            //{
-            //    return;
-            //}
-            //context.StudentSubjects.Add(studentSubject);
-
 
         }
 
@@ -202,8 +194,6 @@ using (EfContext context = new EfContext()) {
                 break;
             }
             studentService.AddStudent(name, age, dob, address);
-            //context.Students.Add(student);
-
         }
 
         void DeleteStudent()

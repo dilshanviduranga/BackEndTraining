@@ -45,20 +45,6 @@ namespace StudentManagement.Web.Controllers
         }
 
 
-        //[HttpDelete("{id}")]
-        //public async Task<ActionResult<StudentSubject>> DeleteStudentSubject(int id)
-        //{
-        //    var studentSubject = await _context.StudentSubjects.FindAsync(id);
-        //    if (studentSubject == null)
-        //    {
-        //        return NotFound();
-        //    }
-        //    _context.StudentSubjects.Remove(studentSubject);
-        //    await _context.SaveChangesAsync();
-        //    return AcceptedAtAction(nameof(GetStudentSubject), new { id = studentSubject.Id }, studentSubject);
-        //}
-
-
         [HttpGet("get/{id}")]
         public async Task<ActionResult<StudentSubject>> GetStudentSubject(int id)
         {

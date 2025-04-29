@@ -12,9 +12,6 @@ namespace StudentManagement.Domain
     [PrimaryKey("Id")]
     public class Student
     {
-        //[Key]
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        //public int studentId;
 
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -58,7 +55,7 @@ namespace StudentManagement.Domain
 
         public Student(String name, int age, DateTime dob, String address)
         {
-            //this.studentId = id;
+            this.name = name;
             this.name = name;
             this.age = age;
             this.address = address;

@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.EntityFrameworkCore;
 using StudentManagement.Repo;
 using Microsoft.Identity.Web;
 

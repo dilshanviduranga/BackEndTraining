@@ -21,12 +21,6 @@ namespace StudentManagement.Application
             get => subjectList;
             set => subjectList = value;
         }
-
-        //public SubjectService(SubjectRepository subjectRepository)
-        //{
-        //    this.subjectRepository = subjectRepository;
-        //}
-
         public SubjectService(UnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
@@ -49,7 +43,6 @@ namespace StudentManagement.Application
             Subject subject1 = new Subject(sName.Trim());
             subjectList.Add(subject1);
             Console.WriteLine($"{subject1.SubjectName.Trim()} Subject Successfully Added...\n");
-            //subjectRepository.AddSubject(subject1);
             unitOfWork.subjectRepository.AddSubject(subject1);
             return;
         }
@@ -98,11 +91,6 @@ namespace StudentManagement.Application
                 }
                 break;
             }
-
-            //if (finder > 0 & finder <= subjectList.Count)
-            //{
-            //    return finder;
-            //}
 
             foreach (var item in subjectList)
             {
