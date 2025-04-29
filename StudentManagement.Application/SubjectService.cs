@@ -21,12 +21,6 @@ namespace StudentManagement.Application
             get => subjectList;
             set => subjectList = value;
         }
-
-        //public SubjectService(SubjectRepository subjectRepository)
-        //{
-        //    this.subjectRepository = subjectRepository;
-        //}
-
         public SubjectService(UnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
@@ -46,12 +40,23 @@ namespace StudentManagement.Application
                     return;
                 }
             }
-            Subject subject1 = new Subject(subjectList.Count + 1, sName.Trim());
+            Subject subject1 = new Subject(sName.Trim());
             subjectList.Add(subject1);
             Console.WriteLine($"{subject1.SubjectName.Trim()} Subject Successfully Added...\n");
-            //subjectRepository.AddSubject(subject1);
             unitOfWork.subjectRepository.AddSubject(subject1);
             return;
+        }
+
+        public void DeleteSubject(Subject subject)
+        {
+            if (subjectList.Count == 0)
+            {
+                Console.WriteLine("There are no subjects...");
+                return;
+            }
+            subjectList.Remove(subject);
+            Console.WriteLine($"{subject.SubjectName} Subject Successfully Deleted...\n");
+            unitOfWork.subjectRepository.DeleteSubject(subject);
         }
 
         public void ViewSubjects()
@@ -64,7 +69,7 @@ namespace StudentManagement.Application
             Console.WriteLine("Subject Name\n");
             for (int i = 0; i < subjectList.Count; i++)
             {
-                Console.WriteLine($"[{i + 1}] {subjectList[i].SubjectName}");
+                Console.WriteLine($"[{subjectList[i].Id}] {subjectList[i].SubjectName}");
             }
             Console.WriteLine();
         }
@@ -87,9 +92,12 @@ namespace StudentManagement.Application
                 break;
             }
 
-            if (finder > 0 & finder <= subjectList.Count)
+            foreach (var item in subjectList)
             {
-                return finder;
+                if(finder == item.Id)
+                {
+                    return finder;
+                }
             }
             return -1;
         }

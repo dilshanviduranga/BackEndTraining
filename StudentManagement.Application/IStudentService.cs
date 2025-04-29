@@ -11,5 +11,7 @@ namespace StudentManagement.Application
     {
         void AddStudent(String name, int age, DateTime dob, String address);
         void ViewStudents();
+
+        void DeleteStudent(Student student);
     }
 }
